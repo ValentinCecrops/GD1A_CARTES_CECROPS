@@ -1,3 +1,6 @@
+#ifndef MONSTRE_CPP
+#define MONSTRE_CPP
+
 #include <iostream>
 #include <string>
 #include "Monstre.h"
@@ -12,6 +15,7 @@
         void afficher();
         void attaquer(int scoreAtkEnnemi);
         int getScoreAtk();
+        bool getDispo();
         Monstre(std::string nom, int pv, int scoreAtk);
         Monstre();
 */
@@ -33,6 +37,10 @@ void Monstre::attaquer(int scoreAtkEnnemi)
 
 int Monstre::getScoreAtk() {return _scoreAtk;}
 
+bool Monstre::getDispo() {return _disponible;}
+
 Monstre::Monstre(std::string nom, int pv, int scoreAtk) : _nom(nom), _pv(pv), _scoreAtk(scoreAtk), _disponible(true) {}
 
-Monstre::Monstre() : _nom("Claudio"), _pv(200), _scoreAtk(20), _disponible(true) {}
+Monstre::Monstre() : _nom("Monstre"), _pv(100), _scoreAtk(20), _disponible(true) {}
+
+#endif
